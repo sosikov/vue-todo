@@ -37,14 +37,22 @@ body {
   color: var(--color-main);
   cursor: default;
   min-width: 320px;
-  margin: 0;
+  margin: 30px 0 0;
 }
 hr {
   width: 36px;
+  height: 1px;
+  border: none;
+  background: var(--color-black);
+  margin: 0 auto;
+}
+h1, h2 {
+  margin: 0;
+  line-height: 1;
 }
 ul {
   list-style: none;
-  padding-left: 0;
-  margin: 16px 0;
+  padding: 0;
+  margin: 0;
 }
 </style>

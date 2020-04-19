@@ -16,16 +16,16 @@ export default {
 <style scoped>
 .input {
   padding: 6px 16px;
-  margin: 3px 4px;
-  font-size: 14px;
-  border: 1px solid var(--color-lightdark);
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid var(--color-lightdark);
   outline: none;
   -webkit-appearance: none;
-  border-radius: 2px;
   color: var(--color-main);
 }
 .input:focus {
-  border: 1px solid var(--color-dark);
+  border: none;
+  border-bottom: 1px solid var(--color-dark);
 }
 </style>
 

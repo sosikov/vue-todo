@@ -1,15 +1,15 @@
 <template>
-  <ul>
+  <ul class="todo">
     <Todo
+      class="todo__item"
       v-for="todo of todos"
       :key="todo.id"
       :todo="todo"
       :editable="editable"
       @remove-todo="removeTodo"
     />
-    <div v-if="editable">
+    <div class="todo__controls" v-if="editable">
       <Input
-        class="todolist__input"
         :item="newTodo"
         :placeholder="'Todo'"
       />
@@ -59,7 +59,14 @@ export default {
 </script>
 
 <style scoped>
-.todolist__input {
-  margin-left: 28px;
+.todo__item {
+  margin-bottom: 6px;
+}
+.todo__controls {
+  margin-bottom: 24px;
+  margin-left: 20px;
+}
+.todo__controls > button {
+  margin-left: 6px;
 }
 </style>

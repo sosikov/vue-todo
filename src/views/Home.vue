@@ -1,13 +1,18 @@
 <template>
-  <div>
-    <h1>Home page</h1>
-    <hr>
-    <Note
-      v-for="note of notes"
-      :key="note.id"
-      :note="note"
-      @remove-note="removeNote"
-    />
+  <div class="home">
+    <h1 class="home__title">
+      Home page
+    </h1>
+    <hr class="home__hr">
+    <div class="home__notes">
+      <Note
+        class="home__note"
+        v-for="note of notes"
+        :key="note.id"
+        :note="note"
+        @remove-note="removeNote"
+      />
+    </div>
     <div class="home__control">
       <Button
         :label="'create note'"
@@ -60,7 +65,19 @@ export default {
 </script>
 
 <style scoped>
+.home__title {
+  margin-bottom: 32px;
+}
+.home__hr {
+  margin-bottom: 24px;
+}
 .home__control {
-  margin: 20px 0 60px;
+  margin-bottom: 60px;
+}
+.home__notes {
+  margin-bottom: 32px;
+}
+.home__note {
+  margin-bottom: 24px;
 }
 </style>

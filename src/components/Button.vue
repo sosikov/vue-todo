@@ -22,12 +22,11 @@ export default {
 <style scoped>
 .button {
   padding: 6px 16px;
-  margin: 4px;
   min-width: 54px;
   outline: none;
   border: 1px solid var(--color-main);
   border-radius: 2px;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--color-main);
   text-transform: capitalize;
   cursor: pointer;

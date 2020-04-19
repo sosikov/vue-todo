@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div>
+  <div class="note">
+    <div class="note__header">
       <h2 v-if="!editable">
         {{note.title}}
       </h2>
@@ -12,6 +12,7 @@
       />
     </div>
     <TodoList
+      class="note__todos"
       :todos="note.todos"
       :editable="editable"
       @create-todo="createTodo"
@@ -71,12 +72,16 @@ export default {
 </script>
 
 <style scoped>
+.note__header {
+  margin-bottom: 18px;
+}
 .note__input {
-  margin-top: 14px;
   text-align: center;
-  min-width: 226px;
+}
+.note__todos {
+  margin-bottom: 18px;
 }
 .note__controls {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 </style>

@@ -8,10 +8,10 @@
       :item="todo"
       :editable="editable"
     />
-    <span v-if="!editable">
+    <span class="todo__title" v-if="!editable">
       {{todo.title}}
     </span>
-    <div v-if="editable">
+    <div class="todo__controls" v-if="editable">
       <Input :item="todo"/>
       <Button
         :label="'remove'"
@@ -50,9 +50,12 @@ export default {
   align-items: center;
 }
 .todo__checkbox {
-  margin-right: 4px;
+  margin-right: 6px;
 }
-.todo--done > span {
+.todo__controls > button {
+  margin-left: 6px;
+}
+.todo--done > .todo__title {
   text-decoration: line-through;
 }
 </style>

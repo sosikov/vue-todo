@@ -1,14 +1,15 @@
 <template>
   <modal
+    class="modal"
     name="modal"
     @before-open="beforeOpen"
     :adaptive="true"
   >
-    <div class="modal">
+    <div class="modal__content">
       <h2 class="modal__title">
         {{title}}
       </h2>
-      <div>
+      <div class="modal__controls">
         <Button
           :label="'no'"
           @tap="cancel"
@@ -56,7 +57,7 @@ export default {
 </script>
 
 <style scoped>
-.modal {
+.modal__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -65,6 +66,9 @@ export default {
 }
 .modal__title {
   text-align: center;
-  margin-top: 0;
+  margin-bottom: 16px;
+}
+.modal__controls > button {
+  margin: 0 4px;
 }
 </style>

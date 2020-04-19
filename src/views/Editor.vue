@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <h1>Editor page</h1>
-    <hr>
-    <Note :note="note" :editable="true"/>
+  <div class="editor">
+    <h1 class="editor__title">
+      Editor page
+    </h1>
+    <hr class="editor__hr">
+    <Note class="editor__note" :note="note" :editable="true"/>
     <div class="editor__controls">
       <Button
         :label="'save note'"
@@ -58,7 +60,12 @@ export default {
     showCancelModal() {
       this.$modal.show('modal', {
         title: `Get back?`,
-        callback: this.goBack
+        callback: () => {
+          if (!this.hasChar(this.note.title)) {
+            removeNoteRequest(this.note.id)
+          }
+          this.goBack()
+        }
       })
     },
     showRemoveModal() {
@@ -84,7 +91,16 @@ export default {
 </script>
 
 <style scoped>
-.editor__controls {
-  margin-top: 24px;
+.editor__title {
+  margin-bottom: 32px;
+}
+.editor__hr {
+  margin-bottom: 24px;
+}
+.editor__note {
+  margin-bottom: 32px;
+}
+.editor__controls > button {
+  margin: 0 4px 8px;
 }
 </style>
